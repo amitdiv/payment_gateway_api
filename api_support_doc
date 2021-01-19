@@ -17,3 +17,5 @@
    if amount from 1 to 19 is given, then Euros_20 section will get updated.
    if amount from 21 to 500 is given, then Euros_500 section will get updated.
    if amount greater than 500 is given, then Euros_501 section will get updated.
+
+8. The api, when called, will retun the status_code and relevant message on terminal and will also create a basic logfile( with no handler) in the same directory where the code resides
