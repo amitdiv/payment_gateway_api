@@ -7,7 +7,7 @@ node {
         if (env.NAME=="XYZ") {
             println("Build started")
         } else {
-            println("Name is differrent")
+            println("Name is differrent hence printing title :: "+env.Title)
         }
     }
     stage('Test') {
