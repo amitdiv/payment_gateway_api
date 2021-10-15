@@ -1,7 +1,11 @@
 
 node {
     stage('Build') {
-        println("Build started")
+        if (env.NAME=="AMIT") {
+            println("Build started")
+        } else {
+            println("Name is differrent")
+        }
     }
     stage('Test') {
         println("test started")
