@@ -6,7 +6,7 @@ node {
     stage('Build') {
         if (env.NAME=="XYZ") {
             println("Build started")
-            sh 'python ./processPayment.py'
+            sh 'python --version'
         } else {
             println("Name is differrent hence printing title :: "+{Title})
         }
