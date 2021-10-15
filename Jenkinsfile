@@ -1,7 +1,10 @@
 
 node {
+    environment { 
+        Title = 'qwerty'
+    }
     stage('Build') {
-        if (env.NAME=="AMIT") {
+        if (env.NAME=="XYZ") {
             println("Build started")
         } else {
             println("Name is differrent")
