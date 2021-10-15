@@ -8,7 +8,7 @@ node {
             println("Build started")
             sh 'python ./processPayment.py'
         } else {
-            println("Name is differrent hence printing title :: "+Title)
+            println("Name is differrent hence printing title :: "+{Title})
         }
     }
     stage('Test') {
