@@ -1,4 +1,4 @@
-mport groovy.json.JsonSlurper
+import groovy.json.JsonSlurper
 import groovy.json.JsonParserType
 
 String branchName = "dev"
@@ -26,22 +26,22 @@ node {
     echo 'Cloning files from (branch: "' + branchName + '" )'
   }
   stage('Execute') {
-      try {
-          //println(retval.getClass())
-          //println(retval)
-          def data = readFile(readfile).split('\n')
-          for (d in data) {
-              def l = d.split(',').collect{it as String}
-              println(l)
-       } except (Exception e) {
+    try {
+        //println(retval.getClass())
+        //println(retval)
+        def data = readFile(readfile).split('\n')
+        for (d in data) {
+            def l = d.split(',').collect{it as String}
+            println(l)
+		}
+    } catch(Exception e) {
           status = 1
-       }
-      }
-      def listener = { result -> println "Execution completed with result :: $result" }
-      if (status == 0 ) {
-          listener.call("pass")
-      } else {
-          listener.call("fail")
-      }
+    }
+    def listener = { result -> println "Execution completed with result :: $result" }
+    if (status == 0 ) {
+        listener.call("pass")
+    } else {
+        listener.call("fail")
+    }
   }
 }
